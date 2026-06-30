@@ -1,3 +1,4 @@
+#removing duplicants from sorted array
 a=[1,1,2]
 i=0
 j=1
@@ -13,3 +14,4 @@ while(j<n):
         i+=1
         k+=1
         print(k)
+    
