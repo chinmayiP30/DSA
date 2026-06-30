@@ -33,10 +33,29 @@
 # print(k)
 
 
-nums = [0,1,0,3,12]
-j=0
-for i in range(len(nums)):
-    if nums[i]!=0:
-        nums[j],nums[i]=nums[i],nums[j]
+# nums = [0,1,0,3,12]
+# j=0
+# for i in range(len(nums)):
+#     if nums[i]!=0:
+#         nums[j],nums[i]=nums[i],nums[j]
+#         j+=1
+# print(nums)
+
+#removing duplicants from sorted array
+a=[1,1,2]
+i=0
+j=1
+k=1
+n=len(a)
+while(j<n):
+    if a[j-1]==a[j]:
         j+=1
-print(nums)
+        continue
+    else:
+        a[i+1]=a[j]
+        j+=1
+        i+=1
+        k+=1
+        print(k)
+    
+
