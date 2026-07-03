@@ -1,40 +1,23 @@
-
-main=[-4,-1,0,3,10]
-a=[]
-b=[]
-for i in range (len(main)):
-    if main[i]>=0:
-        b.append(main[i])
-    else:
-        a.append(main[i])
-if len(a)!=0:
-    for i in range(len(a)):
-        a[i]=a[i]*a[i]
-    a.reverse()
-if len(b)!=0:
-    for i in range (len(b)):
-        b[i]=b[i]*b[i]
-i=0
-j=0
-m=len(a)
-n=len(b)
-res=[0]*(m+n)
-k=0
-while i<m and j<n:
-    if a[i]<=b[j]:
-        res[k]=a[i]
-        i+=1
-        k+=1
-    else:
-        res[k]=b[j]
-        j+=1
-        k+=1
-while i<m:
-    res[k]=a[i]
-    i+=1
-    k+=1
-while j<n:
-    res[k]=b[j]
-    j+=1
-    k+=1
-print(res)
+#3sum closest
+nums=[-1,2,1,-4]
+target=1
+nums.sort()
+n=len(nums)
+closest_s=nums[0]+nums[1]+nums[2]
+min_diff=abs(closest_s-target)
+for i in range(n-2):
+    left=i+1
+    right=n-1
+    while left<right:
+        curr_s=nums[i]+nums[left]+nums[right]
+        diff=abs(target-curr_s)
+        if diff<min_diff:
+            min_diff=diff
+            closest_s=curr_s
+        if curr_s<target:
+            left+=1
+        elif curr_s>target:
+            right-=1
+        else:
+            print(curr_s)
+print(closest_s)
