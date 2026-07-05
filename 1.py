@@ -274,3 +274,99 @@
 #     for j in range(6-i):
 #         print("*",end="")
 #     print()
+
+
+# for i in range(5):
+#     for j in range(5-i-1):
+#         print(" ",end="")
+#     for j in range(2*i+1):
+#         print("*",end="")
+#     print()
+
+
+# # largest of array
+# a=[3,2,1,5,2]
+# n=len(a)
+# a.sort()
+# print(a[n-1])
+
+# a=[3,2,1,5,2]
+# n=len(a)
+# l=a[0]
+# for i in range(n):
+#     if a[i]>l:
+#         l=a[i]
+# print(l)
+
+# #second largest element 
+# a=[1,2,4,7,7,5]
+# a.sort()
+# n=len(a)
+# l=a[n-1]
+# s=0
+# for i in range(n-2,-1,-1):
+#     if a[i]!=l:
+#         s=a[i]
+#         break
+# print(s)
+
+# # better approach
+# a=[1,2,4,7,7,5]
+# n=len(a)
+# l=a[0]
+# for i in range(n):
+#     if a[i]>l:
+#         l=a[i]
+# s=-1
+# for i in range(n):
+#     if a[i]>s and a[i]!=l:
+#         s=a[i]
+# print(s)
+
+# a=[1,2,4,7,7,5]
+# n=len(a)
+# l=a[0]
+# s=-1
+# for i in range(n):
+#     if a[i]>l :
+#         s=l
+#         l=a[i]
+#     elif a[i]<l and a[i]>s:
+#         s=a[i]
+# print(l)
+# print(s)
+
+# a= [3,4,5,1,2]
+# n=len(a)
+# is_s=True
+# for i in range(1,n):
+#     if a[i]<a[i-1]:
+#         is_s=False
+#         break
+# print(is_s) 
+
+# #left rotate array by one
+# a=[1,2,3,4,5]
+# n=len(a)
+# temp=a[0]
+# for i in range(1,n):
+#     a[i-1]=a[i]
+# a[n-1]=temp
+# print(a)
+
+#left rotate by d elements
+a=[1,2,3,4,5,6,7]
+d=3
+n=len(a)
+temp=[]
+for i in range(d):
+    temp.append(a[i])
+for i in range(d,n):
+    a[i-d]=a[i]
+j=0
+for i in range(n-d,n):
+    a[i]=temp[j]
+    j+=1
+print(a)
+
+
