@@ -354,19 +354,151 @@
 # a[n-1]=temp
 # print(a)
 
-#left rotate by d elements
-a=[1,2,3,4,5,6,7]
-d=3
-n=len(a)
-temp=[]
-for i in range(d):
-    temp.append(a[i])
-for i in range(d,n):
-    a[i-d]=a[i]
-j=0
-for i in range(n-d,n):
-    a[i]=temp[j]
-    j+=1
-print(a)
+# #left rotate by d elements
+# a=[1,2,3,4,5,6,7]
+# d=3
+# n=len(a)
+# temp=[]
+# for i in range(d):
+#     temp.append(a[i])
+# for i in range(d,n):
+#     a[i-d]=a[i]
+# j=0
+# for i in range(n-d,n):
+#     a[i]=temp[j]
+#     j+=1
+# print(a)
+
+# #1st occurance of target's index
+# nums = [2, 3, 4, 5, 3]
+# n=len(nums)
+# t=3
+# for i in range(n):
+#     if nums[i]==t:
+#         print(i)
+#         break
 
 
+# #union of sorted arrays 
+# nums1 = [1, 2, 3, 4, 5]
+# nums2 = [1, 2, 7]
+# i=0
+# j=0
+# res=[]
+# m=len(nums1)
+# n=len(nums2)
+# while i<m and j<n:
+#     if nums1[i]<=nums2[j]:
+#         if len(res)==0 or res[-1]!=nums1[i]:
+#             res.append(nums1[i])
+#         i+=1
+
+#     else:
+#         if len(res)==0 or res[-1]!=nums2[j]:
+#             res.append(nums2[j])
+#         j+=1
+# while i<m:
+#     if len(res)==0 or res[-1]!=nums1[i]:
+#         res.append(nums1[i])
+#     i+=1
+# while j<n:
+#     if len(res)==0 or res[-1]!=nums2[j]:
+#         res.append(nums2[j])
+#     j+=1
+# print(res)
+
+# nums = [0, 2, 3, 1, 4]
+# n=len(nums)
+# s=sum(nums)
+# e_s=n*(n+1)//2
+# a_s=e_s-s
+# print(a_s)
+
+# #intersection of sorted array(brute)
+# a=[1,2,2,3,3,4,5,6]
+# b=[2,3,3,5,6,6,7]
+# n1=len(a)
+# n2=len(b)
+# vis=[0]*n2
+# res=[]
+# for i in range(n1):
+#     for j in range(n2):
+#         if a[i]==b[j] and vis[j]==0:
+#             res.append(a[i])
+#             vis[j]=1
+#             break
+#         if b[j]>a[i]:
+#             break
+# print(res)
+
+# #optimal sol 
+# a=[1,2,2,3,3,4,5,6]
+# b=[2,3,3,5,6,6,7]
+# n1=len(a)
+# n2=len(b)
+# i=0
+# j=0
+# res=[]
+# while i<n1 and j<n2:
+#     if a[i]<b[j]:
+#         i+=1
+#     elif b[j]<a[i]:
+#         j+=1
+#     else:
+#         if len(res)==0 or res[-1]!=a[i]:
+#             res.append(a[i])
+#         i+=1
+#         j+=1
+    
+# print(res)
+
+
+# #count of max consecutive 1s
+# nums = [1, 1, 0, 0, 1, 1, 1, 0]
+# n=len(nums)
+# count=0
+# maxi=0
+# for i in range (n):
+#     if nums[i]==1:
+#         count+=1
+#         maxi=max(count,maxi)
+#     else:
+#         count=0
+# print(maxi)
+
+
+##ingle number 
+# nums = [1, 2, 2, 4, 3, 1, 4]
+
+# n = len(nums)
+
+# for i in range(n):
+#     num = nums[i]
+#     count = 0
+
+#     for j in range(n):
+#         if nums[j] == num:
+#             count += 1
+
+#     if count == 1:
+#         print(num)
+#         break
+
+# nums = [1, 2, 2, 4, 3, 1, 4]
+# n=len(nums)
+# for i in range(n):
+#     num=nums[i]
+#     count=0
+#     for j in range(n):
+#         if nums[j]==num:
+#             count+=1
+#     if count==1:
+#         print(num)
+
+#optimal sol
+nums = [1, 2, 2, 4, 3, 1, 4]
+XOR=0
+n=len(nums)
+for i in range(n):
+    XOR=XOR^nums[i]
+print(XOR)
