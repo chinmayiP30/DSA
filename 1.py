@@ -495,10 +495,63 @@
 #     if count==1:
 #         print(num)
 
-#optimal sol
-nums = [1, 2, 2, 4, 3, 1, 4]
-XOR=0
-n=len(nums)
-for i in range(n):
-    XOR=XOR^nums[i]
-print(XOR)
+# #optimal sol
+# nums = [1, 2, 2, 4, 3, 1, 4]
+# XOR=0
+# n=len(nums)
+# for i in range(n):
+#     XOR=XOR^nums[i]
+# print(XOR)
+
+# #longest subarray which is equal to target
+# #brute force
+# nums = [10, 5, 2, 7, 1, 9]
+# t=15
+# l=0
+# n=len(nums)
+# for i in range(n):
+#     for j in range(i,n):
+#         s=0
+#         for k in range(i,j+1):
+#             s+=nums[k]
+#         if s==t:
+#             l=max(l,j-i+1)
+# print(l)
+
+# # #sliding window 
+# a=[100,200,300,400]
+# k=2
+# n=len(a)
+# low=0
+# high=k-1
+# sum=0
+# res=0
+# for i in range(low,high+1):
+#     sum+=a[i]
+# while(high<n):
+#     res=max(res,sum)
+#     low+=1
+#     high+=1
+#     if(high==n):
+#         break
+#     sum=sum-a[low-1]+a[high]
+# print(res)
+
+##min size of subarray which is greater or equal to target
+# a=[1,2,4,4]
+# n=len(a)
+# low=0
+# high=0
+# target=4
+# res=float('inf')
+# sum=0
+# while(high<n):
+#     sum=sum+a[high]
+#     while(sum>=target):
+#         l=high-low+1
+#         res=min(res,l)
+#         sum=sum-a[low]
+#         low+=1
+#     high+=1
+# print(res)    
+
