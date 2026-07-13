@@ -1,18 +1,9 @@
-
-a=[1,2,4,4]
-n=len(a)
-low=0
-high=0
-target=5
-res=float('inf')
-sum=0
-while(high<n):
-    sum=sum+a[high]
-    while(sum>=target):
-        l=high-low+1
-        res=min(res,l)
-        sum=sum-a[low]
-        low+=1
-    high+=1
-print(res)    
-
+a=[7,1,5,3,6,4]
+m_profit=0
+mini=a[0]
+profit=None
+for i in range(1,len(a)):
+    profit=a[i]-mini
+    m_profit=max(m_profit,profit)
+    mini=min(mini,a[i])
+print(m_profit)

@@ -518,7 +518,22 @@
 #             l=max(l,j-i+1)
 # print(l)
 
+# #longest substring length with sum k brute force sol
+# nums = [10, 5, 2, 7, 1, 9]
+# k=15
+# n=len(nums)
+# leng=0
+# for i in range(n):
+#     for j in range(i,n):
+#         sum=0
+#         for k in range(i,j+1):
+#             sum=sum+nums[i]
+#             if sum==k:
+#                 leng=max(leng,j-i+1)
+# print(leng)
+
 # # #sliding window 
+##max sum of subarray given size
 # a=[100,200,300,400]
 # k=2
 # n=len(a)
@@ -555,3 +570,132 @@
 #     high+=1
 # print(res)    
 
+# #max sub array with sum k
+# nums = [10, 5, 2, 7, 1, 9]
+# low=0
+# high=0
+# t=15
+# n=len(nums)
+# res=float('-inf')
+# sum=0
+# while(high<n):
+#     sum=sum+nums[high]
+#     while sum>t:
+#         sum=sum-nums[low]
+#         low+=1
+#     if (sum==t):
+#         res=max(res,high-low+1)
+#     high+=1
+# print(res)
+
+# #min sub array 
+# nums = [10, 5, 2, 7, 1, 9]
+# k=15
+# n=len(nums)
+# leng=0
+# res=float('inf')
+# l=0
+# h=0
+# s=0
+# while h<n:
+#     s=s+nums[h]
+#     while s>k:
+#         s=s-nums[l]
+#         l+=1
+#     if s==k:
+#         res=min(res,h-l+1)
+#     h+=1
+# print(res)
+
+
+# #num of subarray with given sum(k) where arr includes only the postive int
+# nums = [1,2,3] 
+# k=3
+# count=0
+# n=len(nums)
+# s=0
+# l=0
+# h=0
+# res=0
+# while h<n:
+#     s+=nums[h]
+#     if s>k:
+#         s=s-nums[l]
+#         l+=1
+#     if s==k:
+#         count+=1
+#     h+=1
+# print(count)
+
+
+# #brute force approach for printing majority elements 
+# nums = [3,2,3,3]
+# nums.sort()
+# n=len(nums)
+# res=[]
+# for i in range(n):
+#     c=0
+#     for j in range(n):
+#         if nums[j]==nums[i]:
+#             c+=1
+#     if c>n//2:
+#         print(nums[i])
+#         break
+
+# #optimal sol for printing majority element in arr (only when they occur)
+# nums = [7, 0, 0, 1, 7, 7, 2, 7, 7]
+# count=0
+# element=None
+# for i in nums:
+#     if count==0:
+#         element=i
+#     if i==element:
+#         count+=1
+#     else:
+#         count-=1
+# print(element)
+
+# #optimal sol for printing majority element in arr (only when they occur) even when maj element does not exists 
+# nums = [2, 2, 1, 1, 1, 2, 2]
+# count=0
+# element=None
+# for num in nums:
+#     if count==0:
+#         element=num
+#         count=1
+#     elif num==element:
+#         count+=1
+#     else:
+#         count-=1
+# count1=0
+# for num in nums:
+#     if num==element:
+#         count1+=1
+# if count1>len(nums)//2:
+#     print(element)
+# else:
+#     print(-1)
+
+# #printing the maximum sum of sub array
+# nums = [-2,1,-3,4,-1,2,1,-5,4]
+# sum=0
+# maxi=float('-inf')
+# for i in range(len(nums)):
+#     sum=sum+nums[i]
+#     if sum>maxi:
+#         maxi=sum
+#     if(sum<0):
+#         sum=0
+# print(maxi)
+
+
+#stock selling and buying prize to get more profit
+a=[7,1,5,3,6,4]
+m_profit=0
+mini=a[0]
+profit=None
+for i in range(1,len(a)):
+    profit=a[i]-mini
+    m_profit=max(m_profit,profit)
+    mini=min(mini,a[i])
+print(m_profit)
