@@ -676,7 +676,7 @@
 # else:
 #     print(-1)
 
-# #printing the maximum sum of sub array
+# #printing the maximum sum of sub array(using kadane's algorithm)
 # nums = [-2,1,-3,4,-1,2,1,-5,4]
 # sum=0
 # maxi=float('-inf')
@@ -689,13 +689,101 @@
 # print(maxi)
 
 
-#stock selling and buying prize to get more profit
-a=[7,1,5,3,6,4]
-m_profit=0
-mini=a[0]
-profit=None
-for i in range(1,len(a)):
-    profit=a[i]-mini
-    m_profit=max(m_profit,profit)
-    mini=min(mini,a[i])
-print(m_profit)
+# #stock selling and buying prize to get more profit
+# a=[7,1,5,3,6,4]
+# m_profit=0
+# mini=a[0]
+# profit=None
+# for i in range(1,len(a)):
+#     profit=a[i]-mini
+#     m_profit=max(m_profit,profit)
+#     mini=min(mini,a[i])
+# print(m_profit)
+
+# #rearrange acc to sign
+# nums=[3,1,-2,-5,2,-4]
+# n=len(nums)
+# pos=[]
+# neg=[]
+# for i in range(0,n):
+#     if nums[i]>0:
+#         pos.append(nums[i])
+#     else:
+#         neg.append(nums[i])
+# for i in range(0,n//2):
+#     nums[2*i]=pos[i]
+#     nums[2*i+1]=neg[i]
+# print(nums)
+
+# #optimal sol for rearrange acc to sign 
+# a=[3,1,-2,-5,2,-4]
+# pos=0
+# neg=1
+# n=len(a)
+# res=[0]*n
+# for i in range(n):
+#     if a[i]>0:
+#         res[pos]=a[i]
+#         pos+=2
+#     else:
+#         res[neg]=a[i]
+#         neg-=2
+# print(res)
+
+# #leader in arr
+# nums = [1, 2, 5, 3, 1, 2]
+# n=len(nums)
+# res=[]
+# for i in range(n):
+#     leader=True
+#     for j in range(i+1,n):
+#         if nums[j]>nums[i]:
+#             leader=False
+#             break
+#     if leader==True:
+#             res.append(nums[i])
+# print(res)
+
+# nums = [1, 2, 5, 3, 1, 2]
+# n=len(nums)
+# maxi=float('-inf')
+# res=[]
+# for i in range(n-1,-1,-1):
+#     if nums[i]>=maxi:
+#         maxi=nums[i]
+#         res.append(maxi)
+#         i-=1
+# print(res)
+
+# a = [2, 1, 5, 4, 3, 0, 0]
+# n=len(a)
+# ind=-1
+# for i in range(n-2,-1,-1):
+#     if a[i]<a[i+1]:
+#         ind=i
+#         break
+# if ind==-1:
+#         a.reverse()
+# else:
+#      for i in range(n-1,ind,-1):
+#           if a[i]>a[ind]:
+#                a[i],a[ind]=a[ind],a[i]
+#                break
+#      a[ind+1:]=reversed(a[ind+1:])
+# print(a)
+
+# #long sequence (brute force)
+# arr = [102, 4, 100, 1, 101, 3, 2, 1, 1]
+# long=1
+# n=len(arr)
+# for i in range(n):
+#     x=arr[i]
+#     count=1
+#     while(x+1) in arr:
+#         x=x+1
+#         count+=1
+#         long=max(long,count)
+# print(long)
+
+
+

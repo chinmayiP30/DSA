@@ -1,9 +1,11 @@
-a=[7,1,5,3,6,4]
-m_profit=0
-mini=a[0]
-profit=None
-for i in range(1,len(a)):
-    profit=a[i]-mini
-    m_profit=max(m_profit,profit)
-    mini=min(mini,a[i])
-print(m_profit)
+arr = [102, 4, 100, 1, 101, 3, 2, 1, 1]
+long=1
+n=len(arr)
+for i in range(n):
+    x=arr[i]
+    count=1
+    while(x+1) in arr:
+        x=x+1
+        count+=1
+        long=max(long,count)
+print(long)
