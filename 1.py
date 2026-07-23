@@ -785,5 +785,149 @@
 #         long=max(long,count)
 # print(long)
 
+# nums = [1, 2, 2, 3, 4, 100, 101]
+# if len(nums)==0:
+#     print(0)
+# else:
+#     nums.sort()
+# n=len(nums)
+# long=1
+# c=0
+# last_g=float('-inf')
+# for i in range(n):
+#     if nums[i]-1==last_g:
+#         last_g=nums[i]
+#         c+=1
+#     elif last_g!=nums[i]:
+#         c=1
+#         last_g=nums[i]
+#     long=max(long,c)
+# print(long)
+
+# #optimal sol
+# a = [5, 8, 3, 2, 1, 4]
+# n = len(a)
+# if n == 0:
+#     print(0)
+# else:
+#     longest = 1
+#     st = set()
+#     for i in range(n):
+#         st.add(a[i])
+#     for num in st:
+#         if (num - 1) not in st:
+#             cnt = 1
+#             x = num
+#             while (x + 1) in st:
+#                 x = x + 1
+#                 cnt = cnt + 1
+#             longest = max(longest, cnt)
+#     print(longest)        
+
+# #set matrix to zero(brute force approach)
+# matrix = [
+#     [1, 1, 1],
+#     [1, 0, 1],
+#     [1, 1, 1]
+# ]
+# n=len(matrix)
+# m=len(matrix[0])
+# for i in range(n):
+#     for j in range(m):
+#         if matrix[i][j]==0:
+#             for k in range(n):
+#                 if matrix[i][k]!=0:
+#                     matrix[i][k]=-1
+#             for k in range(m):
+#                 if matrix[k][j]!=0:
+#                     matrix[k][j]=-1
+# for i in range(n):
+#     for j in range(m):
+#         if matrix[i][j]==-1:
+#             matrix[i][j]=0
+# for r in matrix:
+#     print(r)
+
+# mat = [
+#    [1, 1, 1],
+#    [1, 0, 1],
+#    [1, 1, 1]]
+# n=len(mat)
+# m=len(mat[0])
+# row=[0]*n
+# col=[0]*m
+# for i in range(n):
+#     for j in range(m):
+#         if mat[i][j]==0:
+#             row[i]=1
+#             col[j]=1
+# for i in range(n):
+#     for j in range(m):
+#         if row[i]==1 or col[j]==1:
+#             mat[i][j]=0
+# for k in mat:
+#     print(k)
+
+# mat = [
+#     [1, 1, 1],
+#     [1, 0, 1],
+#     [1, 1, 1]
+# ]
+# n=len(mat)
+# m=len(mat[0])
+# col0=1
+# for i in range(n):
+#     for j in range(m):
+#         if mat[i][j]==0:
+#             mat[i][0]=0
+#             if j!=0:
+#                 mat[0][j]=0
+#             else:
+#                 col0=0
+# for i in range(1,n):
+#     for j in range(1,m):
+#         if mat[i][j]!=0:
+#             if mat[0][j]==0 or mat[i][0]==0:
+#                 mat[i][j]=0
+# if mat[0][0]==0:
+#     for j in range(m):
+#         mat[0][j]=0
+# if col0==0:
+#     for i in range(n):
+#         mat[i][0]=0
+# for row in mat:
+#     print(row)
+
+# #binary search
+# nums = [-1,0,3,5,9,12]
+# target = 4
+# for i in range(len(nums)):
+#     if nums[i]==target:
+#         print(i)
+#         break
+# else:
+#     print(-1)
+
+# #Actual binary search method implementation
+# #(high will move to mid-1 place when target is less than mid 
+# #low will move to mid+1 when target is greater than mid )we will de this untill low<=high if high<low then the target does not exists
+# nums = [-1,0,3,5,9,12]
+# target = 3
+# low=0
+# n=len(nums)
+# high=n-1
+# mid=(low+high)//2
+# while(low<=high):
+#     if nums[mid]==target:
+#         print(mid)
+#         break
+#     elif nums[mid]>target:
+#         high=mid-1
+#     else:
+#         low=mid+1
+# else:
+#     print(-1)
+
+
 
 

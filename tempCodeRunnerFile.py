@@ -1,11 +1,16 @@
-arr = [102, 4, 100, 1, 101, 3, 2, 1, 1]
-long=1
-n=len(arr)
-for i in range(n):
-    x=arr[i]
-    count=1
-    while(x+1) in arr:
-        x=x+1
-        count+=1
-        long=max(long,count)
-print(long)
+nums = [-1,0,3,5,9,12]
+target = 3
+low=0
+n=len(nums)
+high=n-1
+mid=(low+high)//2
+while(low<=high):
+    if nums[mid]==target:
+        print(mid)
+        break
+    elif nums[mid]>target:
+        high=mid-1
+    else:
+        low=mid+1
+else:
+    print(-1)
