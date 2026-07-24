@@ -1,16 +1,16 @@
-nums = [-1,0,3,5,9,12]
-target = 3
+#Search insertion position
+nums = [1,3,5,6]
+target = 8
 low=0
-n=len(nums)
-high=n-1
-mid=(low+high)//2
-while(low<=high):
+high=len(nums)-1
+while low<=high:
+    mid=(low+high)//2
     if nums[mid]==target:
         print(mid)
         break
-    elif nums[mid]>target:
-        high=mid-1
-    else:
+    elif nums[mid]<target:
         low=mid+1
+    else:
+        high=mid-1
 else:
-    print(-1)
+    print(low)

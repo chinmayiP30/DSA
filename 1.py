@@ -1,3 +1,15 @@
+#basics
+#counting no of digits
+# n=1434
+# count=0
+# while n>0:
+#     count+=1
+#     n=n//10
+# print(count)
+
+
+
+
 # #2sum
 # nums = [3, 2, 4]
 # nums.sort()
@@ -927,6 +939,26 @@
 #         low=mid+1
 # else:
 #     print(-1)
+
+
+#Search insertion position
+nums = [1,3,5,6]
+target = 8
+low=0
+high=len(nums)-1
+while low<=high:
+    mid=(low+high)//2
+    if nums[mid]==target:
+        print(mid)
+        break
+    elif nums[mid]<target:
+        low=mid+1
+    else:
+        high=mid-1
+else:
+    print(low)
+
+
 
 
 
