@@ -1,16 +1,8 @@
-#Search insertion position
-nums = [1,3,5,6]
-target = 8
-low=0
-high=len(nums)-1
-while low<=high:
-    mid=(low+high)//2
-    if nums[mid]==target:
-        print(mid)
-        break
-    elif nums[mid]<target:
-        low=mid+1
-    else:
-        high=mid-1
-else:
-    print(low)
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+n=len(matrix)
+for i in range(n-1):
+    for j in range(i+1,n):
+        matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+for i in range(n):
+    matrix[i].reverse()
+print(matrix)

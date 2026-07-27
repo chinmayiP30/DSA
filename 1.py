@@ -941,22 +941,147 @@
 #     print(-1)
 
 
-#Search insertion position
-nums = [1,3,5,6]
-target = 8
-low=0
-high=len(nums)-1
-while low<=high:
-    mid=(low+high)//2
-    if nums[mid]==target:
-        print(mid)
-        break
-    elif nums[mid]<target:
-        low=mid+1
-    else:
-        high=mid-1
-else:
-    print(low)
+# #Search insertion position
+# nums = [1,3,5,6]
+# target = 8
+# low=0
+# high=len(nums)-1
+# while low<=high:
+#     mid=(low+high)//2
+#     if nums[mid]==target:
+#         print(mid)
+#         break
+#     elif nums[mid]<target:
+#         low=mid+1
+#     else:
+#         high=mid-1
+# else:
+#     print(low)
+
+# nums= [1,2,2,3]
+# x = 2
+# for i in range(len(nums)):
+#     if nums[i]>=x:
+#         print(i)
+#         break
+# else:
+#     print(len(nums))
+
+
+##floor and ceil
+# nums = [3, 4, 4, 7, 8, 10]
+# x = 5
+# # Find Floor
+# low = 0
+# high = len(nums) - 1
+# floor = -1
+
+# while low <= high:
+#     mid = (low + high) // 2
+
+#     if nums[mid] <= x:
+#         floor = nums[mid]
+#         low = mid + 1
+#     else:
+#         high = mid - 1
+
+# # Find Ceil
+# low = 0
+# high = len(nums) - 1
+# ceil = -1
+
+# while low <= high:
+#     mid = (low + high) // 2
+
+#     if nums[mid] >= x:
+#         ceil = nums[mid]
+#         high = mid - 1
+#     else:
+#         low = mid + 1
+
+# print("Floor =", floor)
+# print("Ceil =", ceil)
+
+# #first and last occurance of a target
+# nums = [5, 7, 7, 8, 8, 10]
+# target = 8
+# # Find first occurrence
+# low = 0
+# high = len(nums) - 1
+# first = -1
+
+# while low <= high:
+#     mid = (low + high) // 2
+
+#     if nums[mid] == target:
+#         first = mid
+#         high = mid - 1
+#     elif nums[mid] < target:
+#         low = mid + 1
+#     else:
+#         high = mid - 1
+
+# # Find last occurrence
+# low = 0
+# high = len(nums) - 1
+# last = -1
+
+# while low <= high:
+#     mid = (low + high) // 2
+
+#     if nums[mid] == target:
+#         last = mid
+#         low = mid + 1
+#     elif nums[mid] < target:
+#         low = mid + 1
+#     else:
+#         high = mid - 1
+
+# print([first, last])
+
+# #counting the occurance of target using binary search
+# nums = [0, 0, 1, 1, 1, 2, 3]
+# target = 1
+# low=0
+# high=len(nums)-1
+# first=-1
+# last=-1
+# while low<=high:
+#     mid=(low+high)//2
+#     if nums[mid]==target:
+#         first=mid
+#         high=mid-1
+#     elif nums[mid]<target:
+#         low=mid+1
+#     else:
+#         high=mid-1
+# if first==-1:
+#     print(0)
+# else:
+#     low=0
+#     high=len(nums)-1
+#     while low<=high:
+#         mid=(low+high)//2
+#         if nums[mid]==target:
+#             last=mid
+#             low=mid+1
+#         elif nums[mid]<target:
+#             low=mid+1
+#         else:
+#             high=mid-1
+#     print(last-first+1)
+
+##Rotating matrix by 90degree
+# matrix = [[1,2,3],[4,5,6],[7,8,9]]
+# n=len(matrix)
+# for i in range(n-1):
+#     for j in range(i+1,n):
+#         matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+# for i in range(n):
+#     matrix[i].reverse()
+# print(matrix)
+
+
 
 
 
