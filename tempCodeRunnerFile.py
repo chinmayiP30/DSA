@@ -1,8 +1,15 @@
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
-n=len(matrix)
-for i in range(n-1):
-    for j in range(i+1,n):
-        matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
-for i in range(n):
-    matrix[i].reverse()
-print(matrix)
+#single element
+nums = [1,1,2,3,3,4,4,8,8]
+low=0
+high=len(nums)-1
+while low<high:
+    mid=(low+high)//2
+    if mid%2==1:
+        mid-=1
+    if nums[mid]==nums[mid+1]:
+        low=mid+2
+    else:
+        high=mid
+print(nums[low])
+
+
