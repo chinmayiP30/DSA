@@ -302,6 +302,7 @@
 # a.sort()
 # print(a[n-1])
 
+
 # a=[3,2,1,5,2]
 # n=len(a)
 # l=a[0]
@@ -479,7 +480,7 @@
 # print(maxi)
 
 
-##ingle number 
+##single number 
 # nums = [1, 2, 2, 4, 3, 1, 4]
 
 # n = len(nums)
@@ -1110,19 +1111,25 @@
 #         high=mid-1
 # print(nums[0]-ans)
 
-#single element
-nums = [1,1,2,3,3,4,4,8,8]
-low=0
-high=len(nums)-1
-while low<high:
-    mid=(low+high)//2
-    if mid%2==1:
-        mid-=1
-    if nums[mid]==nums[mid+1]:
-        low=mid+2
-    else:
-        high=mid
-print(nums[low])
+# #single element
+# nums = [1,1,2,3,3,4,4,8,8]
+# low=0
+# high=len(nums)-1
+# while low<high:
+#     mid=(low+high)//2
+#     if mid%2==1:
+#         mid-=1
+#     if nums[mid]==nums[mid+1]:
+#         low=mid+2
+#     else:
+#         high=mid
+# print(nums[low])
 
-
-
+#largest odd num in string
+num="3456789"
+for i in range(len(num)-1,-1,-1):
+    if int(num[i])%2==1:
+        print(num[:i+1])
+        break
+else:
+    print("")
