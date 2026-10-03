@@ -420,6 +420,7 @@
 #     j+=1
 # print(res)
 
+##missisng number 
 # nums = [0, 2, 3, 1, 4]
 # n=len(nums)
 # s=sum(nums)
@@ -1125,11 +1126,198 @@
 #         high=mid
 # print(nums[low])
 
-#largest odd num in string
-num="3456789"
-for i in range(len(num)-1,-1,-1):
-    if int(num[i])%2==1:
-        print(num[:i+1])
-        break
-else:
-    print("")
+# #largest odd num in string
+# num="3456789"
+# for i in range(len(num)-1,-1,-1):
+#     if int(num[i])%2==1:
+#         print(num[:i+1])
+#         break
+# else:
+#     print("")
+
+# #prefix in string
+# strs = ["flower","flow","flight"]
+# prefix=strs[0]
+# for i in range(len(strs)):
+#     while not strs[i].startswith(prefix):
+#         prefix=prefix[:-1]
+#     if prefix=="":
+#         print("")
+# print(prefix)
+
+# s = "madam"
+# reverse=""
+# for i in range(len(s)-1,-1,-1):
+#     reverse=reverse+s[i]
+# if reverse==s:
+#     print("pal")
+# else:
+#     print("not pal")
+
+# nums = [2, 7, 11, 15]
+# target = 9
+# n=len(nums)
+# i=0
+# j=n-1
+# while i<j:
+#     if nums[i]+nums[j]==target:
+#         print(i,j)
+#         break
+#     elif nums[i]+nums[j]<target:
+#         i+=1
+#     else:
+#         j-=1
+
+# nums = [1, 1, 2, 2, 3, 4, 4]
+# i=0
+# low=i+1
+# high=len(nums)-1
+# res=[]
+# for i in range(len(nums)):
+#     if nums[i]==nums[low]:
+#         i+=1
+#         j+=1
+
+
+# #removing duplicants
+# nums=[1,1,2,2,3,3]
+# i=0
+# for j in range(1,len(nums)):
+#     if nums[j]!=nums[i]:
+#         nums[i+1]=nums[j]
+#         i+=1
+# print(nums[:i+1])
+
+# #rotate string 
+# s = "abcde"
+# goal = "cdeab"
+# if len(s)!=len(goal):
+#     print(False)
+# else:
+#     print(goal in (s+s))
+
+
+# #linked list
+# #middle node
+# head = [1,2,3,4,5]
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+
+# head = Node(1)
+# head.next = Node(2)
+# head.next.next = Node(3)
+# head.next.next.next = Node(4)
+# head.next.next.next.next = Node(5)
+
+# slow = head
+# fast = head
+
+# while fast is not None and fast.next is not None:
+#     slow = slow.next
+#     fast = fast.next.next
+
+# print(slow.data)
+
+
+# #reversal of linked list(brute force approach)
+# stack=[]
+# class Node:
+#     def __init__(self,data):
+#         self.data=data
+#         self.next=None
+# head=Node(1)
+# head.next=Node(2)
+# head.next.next=Node(3)
+# head.next.next.next=Node(4)
+# head.next.next.next.next=Node(5)
+
+# temp=head
+# while temp!=None:
+#     stack.append(temp.data)
+#     temp=temp.next
+# temp=head
+# while temp!=None:
+#     temp.data=stack.pop()
+#     temp=temp.next
+# temp=head
+# while temp!=None:
+#     print(temp.data,end=" ")
+#     temp=temp.next
+
+
+# class Node:
+#     def __init__(self,data):
+#         self.data=data
+#         self.next=None
+# head=Node(1)
+# head.next=Node(2)
+# head.next.next=Node(3)
+# head.next.next.next=Node(4)
+# head.next.next.next.next=Node(5)
+
+# prev = None
+# current = head
+
+# while current is not None:
+#     front = current.next
+#     current.next = prev
+#     prev = current
+#     current = front
+
+# head = prev
+
+# # Print reversed linked list
+# current = head
+
+# while current is not None:
+#     print(current.data, end=" ")
+#     current = current.next
+
+
+
+# #Recursion
+# #reversing an array
+
+# arr=[1,2,3,4,5,6]
+# def reverse(left,right):
+#     if left>=right:
+#         return
+#     arr[left],arr[right]=arr[right],arr[left]
+#     reverse(left+1,right-1)
+# reverse(0,len(arr)-1)
+# print(arr)
+
+# #palindrome check using recursion
+# def palindrome(s, left, right):
+#     if left >= right:
+#         return True
+
+#     if s[left] != s[right]:
+#         return False
+
+#     return palindrome(s, left + 1, right - 1)
+
+
+# s = input("Enter a string: ")
+
+# if palindrome(s, 0, len(s) - 1):
+#     print("Palindrome")
+# else:
+#     print("Not Palindrome")
+
+
+# def pal(s,l,r):
+#     if l>=r:
+#         return True 
+#     if s[l]!=s[r]:
+#         return False
+#     return pal(s,l+1,r-1)
+# s='ababac'
+# if pal(s,0,len(s)-1):
+#     print("pal")
+# else:
+#     print("not pal")
+
